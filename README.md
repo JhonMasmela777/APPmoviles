@@ -1,55 +1,58 @@
-# 🚀 Aplicación Flutter: Navegación y Ciclo de Vida de Widgets  
+# 📱 Flutter Navigation & Widgets App
 
-## 📖 Descripción  
-Este proyecto es un ejercicio práctico en Flutter que explora el uso de navegación, widgets y el ciclo de vida de un `StatefulWidget`.  
+Este proyecto demuestra la navegación en Flutter usando `go_router`, la implementación de `GridView`, `TabBar` y la evidencia del ciclo de vida de los widgets.
 
-Se implementan los siguientes conceptos clave:  
-- 📌 **Navegación entre pantallas** utilizando `Navigator.push()` y `Navigator.pop()`.  
-- 📌 **Widgets importantes**: `GridView`, `TabBar`, `Switch` y `TextField`.  
-- 📌 **Evidencia del ciclo de vida** con `print()` en métodos como `initState()`, `didChangeDependencies()`, `build()`, `setState()` y `dispose()`.  
+## 🚀 Características  
+- **Navegación con parámetros** entre pantallas.  
+- **Lista de elementos con imágenes** usando `GridView`.  
+- **Secciones con `TabBar`** para alternar entre vista de lista y configuración.  
+- **Switch interactivo** para cambiar opciones.  
+- **Evidencia del ciclo de vida** con `print()` en `initState()`, `build()`, `setState()` y `dispose()`.  
 
----
+## 📌 Implementación  
+1. **Navegación:** Se usa `Navigator.push()` para enviar parámetros a la pantalla `FormView`.  
+2. **GridView:** Se muestran elementos con imágenes y descripciones.  
+3. **TabBar:** Permite cambiar entre "Lista" y "Opciones".  
+4. **Switch:** Controla un estado booleano con `setState()`.  
 
-## 🛠️ **Tecnologías utilizadas**  
-- Flutter 3.x  
-- Dart  
-- Material Design  
+## 🛠️ Ciclo de Vida (Salida en consola)  
+- Al iniciar la app:  
+🟢 initState() de MyHomePage 🔵 didChangeDependencies() de MyHomePage 🟡 build() de MyHomePage
 
----
+markdown
+Copiar
+Editar
+- Al navegar a `FormView`:  
+➡ Navegando a FormView con Elemento X 🟢 initState() de FormView 🔵 didChangeDependencies() de FormView 🟡 build() de FormView
 
-## 🎯 **Características del Proyecto**  
-### 1️⃣ **Pantalla Principal (`MyHomePage`)**  
-📌 Contiene un `TabBar` con dos pestañas:  
-- **Lista** → Muestra una cuadrícula (`GridView`) con elementos numerados.  
-- **Opciones** → Contiene un `Switch` para activar/desactivar una opción.  
+markdown
+Copiar
+Editar
+- Al modificar el `TextField` o `Switch`:  
+⚡ setState() - Cambio detectado 🟡 build() actualizado
 
-📌 Al tocar un elemento del `GridView`, se abre la pantalla secundaria (`FormView`).  
+markdown
+Copiar
+Editar
+- Al cerrar `FormView`:  
+🔴 dispose() de FormView
 
-📌 Se imprime en consola el **ciclo de vida del StatefulWidget** al ejecutarse los siguientes métodos:  
-- `initState()` → Se ejecuta al crear el widget.  
-- `didChangeDependencies()` → Se ejecuta cuando cambian las dependencias.  
-- `build()` → Se ejecuta cada vez que la UI se redibuja.  
-- `setState()` → Se ejecuta cuando cambia el estado del widget.  
-- `dispose()` → Se ejecuta cuando el widget es eliminado.  
+diff
+Copiar
+Editar
+- Al cerrar la app:  
+🔴 dispose() de MyHomePage
 
----
+markdown
+Copiar
+Editar
 
-### 2️⃣ **Pantalla Secundaria (`FormView`)**  
-📌 Recibe un **parámetro** desde `MyHomePage`, que muestra en un `Text`.  
+## 📸 Capturas de Pantalla  
+*(Agrega imágenes aquí si es necesario)*  
 
-📌 Contiene un `TextField` para escribir texto y un botón para regresar a la pantalla principal.  
+### 📂 Estructura del Proyecto  
+- `main.dart`: Punto de entrada de la app.  
+- `home_page.dart`: Contiene `TabBar`, `GridView` y `Switch`.  
+- `form_view.dart`: Pantalla secundaria que recibe parámetros.  
 
-📌 Se evidencian los métodos del ciclo de vida en consola.  
-
----
-
-## 📸 **Evidencia del Ciclo de Vida**  
-Cada método imprime un mensaje en la consola cuando se ejecuta.  
-
-Ejemplo de salida en consola:  
-```bash
-initState() → Se ejecuta cuando el widget se crea por primera vez.
-didChangeDependencies() → Se ejecuta cuando cambian las dependencias.
-build() → Se ejecuta cada vez que el widget necesita reconstruirse.
-setState() → Se ejecuta cuando cambia el estado del switch.
-dispose() → Se ejecuta cuando el widget es eliminado permanentemente.
+🔹 *Desarrollado con Flutter y Dart*  

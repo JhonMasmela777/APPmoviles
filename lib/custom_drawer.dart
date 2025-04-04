@@ -57,29 +57,36 @@ class CustomDrawer extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text('Perfil'),
             onTap: () {
-              //context.replace(String route)
-              //Similar a go(), pero en este caso reemplaza la ruta actual sin eliminar el historial anterior.
-              //Útil si quieres evitar que el usuario regrese a la pantalla anterior
-              //pero manteniendo la posibilidad de navegar hacia otras rutas en la pila
-              context.replace('/profile'); // Navega a la pantalla de perfil
-              Navigator.pop(context); // Cierra el drawer
+              context.go('/profile'); // Usa la ruta correcta
+              Navigator.pop(context);
             },
           ),
-          //!PASO DE PARAMETROS
           ListTile(
             leading: const Icon(Icons.input),
             title: const Text('Paso de Parámetros'),
             onTap: () {
-              context.go('/paso_parametros');
+              context.go('/paso_parametros/Ejemplo'); // Ahora incluye un dato
+              Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.loop),
             title: const Text('Ciclo de Vida'),
             onTap: () {
-              context.go('/ciclo_vida');
+              context.go('/ciclo_vida'); // Usa la ruta correcta
+              Navigator.pop(context);
             },
           ),
+
+          ListTile(
+            leading: const Icon(Icons.catching_pokemon),
+            title: const Text('Razas de Perros'),
+            onTap: () {
+              context.go('/dog_breeds'); // Asegúrate de usar la ruta correcta
+              Navigator.pop(context); // Cierra el Drawer
+            },
+          ),
+
           //!FUTURE
           ListTile(
             leading: const Icon(Icons.schedule),

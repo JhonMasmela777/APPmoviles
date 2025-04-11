@@ -111,6 +111,14 @@ class CustomDrawer extends StatelessWidget {
               context.goNamed('pokemons');
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.people),
+            title: const Text('CRUD Usuarios'),
+            onTap: () {
+              context.goNamed('crudUsuarios'); // Mismo nombre que en GoRoute
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
         ],
       ),
     );

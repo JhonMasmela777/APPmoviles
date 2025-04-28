@@ -119,6 +119,16 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pop(context); // Cierra el drawer
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.login),
+            title: const Text('Iniciar Sesión'),
+            onTap: () {
+              context.push(
+                '/login',
+              ); // Cambiado de context.go('/login') a context.push('/login')
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
         ],
       ),
     );

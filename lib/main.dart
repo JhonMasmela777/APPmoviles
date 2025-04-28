@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hola_mundo/crud_view.dart';
+import 'package:hola_mundo/login_view.dart';
 import 'package:hola_mundo/usuarios_view.dart';
 import 'custom_drawer.dart'; // Asegúrate de importar tu CustomDrawer
 import 'timer_view.dart';
@@ -45,6 +46,7 @@ final GoRouter _router = GoRouter(
       name: 'future',
       builder: (context, state) => const FutureView(),
     ),
+    GoRoute(path: '/login', builder: (context, state) => const LoginView()),
     GoRoute(
       path: '/usuarios',
       name: 'crudUsuarios', // Nombre de la ruta
